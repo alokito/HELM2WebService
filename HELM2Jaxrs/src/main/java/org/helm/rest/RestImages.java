@@ -38,6 +38,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.commons.codec.binary.Base64;
 
+import org.apache.commons.codec.binary.StringUtils;
 import org.helm.chemtoolkit.CTKException;
 import org.helm.notation2.Monomer;
 import org.helm.notation2.MonomerFactory;
@@ -113,7 +114,7 @@ public class RestImages {
 
       StringBuilder sb = new StringBuilder();
       sb.append("data:image/png;base64,");
-      sb.append(org.apache.tomcat.util.codec.binary.StringUtils.newStringUtf8(Base64.encodeBase64(result, false)));
+      sb.append(StringUtils.newStringUtf8(Base64.encodeBase64(result, false)));
       return Response.status(Response.Status.OK).entity(sb.toString()).build();
 
     } catch (BuilderMoleculeException | CTKException | ChemistryException e) {
@@ -151,7 +152,7 @@ public class RestImages {
       byte[] result = webservice.generateImageForHELMMolecule(helm);
       StringBuilder sb = new StringBuilder();
       sb.append("data:image/png;base64,");
-      sb.append(org.apache.tomcat.util.codec.binary.StringUtils.newStringUtf8(Base64.encodeBase64(result, false)));
+      sb.append(StringUtils.newStringUtf8(Base64.encodeBase64(result, false)));
       return Response.status(Response.Status.OK).entity(sb.toString()).build();
     } catch (ValidationException | BuilderMoleculeException | CTKException | IOException | ChemistryException e) {
       String message = e.getClass() + " " + e.getMessage();
