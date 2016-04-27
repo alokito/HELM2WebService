@@ -8,7 +8,12 @@
 
  
   <dependencies>
-
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.9.10</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   
   <repositories>
@@ -21,6 +26,7 @@
   <modules>
     <module>HELM2Jaxrs</module>
     <module>HELM2Jersey</module>
+    <module>HELM2Lambda</module>
   </modules>
  
 

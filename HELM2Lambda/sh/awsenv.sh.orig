@@ -1,0 +1,20 @@
+# REQUIRED
+# AWS profile from ~/.aws/credentials to use to connect.
+export PROFILE=<profile>
+
+# OPTIONAL
+# it is safe to leave these as they are, but you may want to change them.
+
+# names of roles for lambda to execute, and for api-gateway to access lambda
+export LAMBDA_ROLE=helm_lambda_role
+export API_GATEWAY_ROLE=helm_apigateway_role
+
+# variables required for create-lambda.sh and update-lambda.sh scripts
+export LAMBDA_NAME=helm_lambda
+export LAMBDA_BUCKET=helm_bucket
+
+# variables required for creating the API gateway entries
+export API_NAME=helm_api
+
+
+
